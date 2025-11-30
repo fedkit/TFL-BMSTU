@@ -30,8 +30,8 @@ digraph {
     21 [label="q21"]
     22 [label="q22"]
     23 [label="q23"]
-    24 [label="q22"]
-    25 [label="q23"]
+    24 [label="q24"]
+    25 [label="q25"]
     
     dummy -> 0
     
