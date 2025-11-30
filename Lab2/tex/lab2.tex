@@ -1,0 +1,134 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+
+\usepackage{indentfirst}
+\setlength{\parindent}{0.75cm}
+
+\begin{document}
+
+\begin{center}
+    {\Large \textbf{Лабораторная работа №2}}\\[6pt]
+    {\large Вариант 14}
+\end{center}
+
+\vspace{-0.5cm}
+
+\[
+\left( aa^{*}ab \;\middle|\; bbabb \;\middle|\; ab\,b^{*}abab \right)^{*}
+\, baba \,
+(a \mid b)(a \mid b)
+\left( (aa)^{*}ab \;\middle|\; bab\,b^{*}aabab \right)^{*}
+\]
+
+\section*{ДКА}
+
+\begin{center}
+    \includegraphics[width=0.85\textwidth]{DFA.png} 
+\end{center}
+
+
+\section*{Таблица переходов}
+
+w1  = ababbababb
+
+w2  = bb
+
+w3  = $\varepsilon$
+
+w4  = abb
+
+w5  = bababa
+
+w6  = b^5ababbababb
+
+w7  = a
+
+w8  = ababa
+
+w9  = ab^3ababa
+
+w10 = b^3ababa
+
+w11 = babbababb
+
+w12 = aaabbababa
+
+w13 = babb
+
+w14 = ab^4aabab
+
+w15 = a^8b
+
+w16 = a^9b
+
+w17 = bbababa
+
+w18 = b^2aabab
+
+w19 = ab
+
+w20 = b
+
+w21 = abbababa
+
+w22 = aabab
+
+w23 = bab
+
+w24 = abab
+
+
+
+\begin{center}
+\scriptsize
+\setlength{\tabcolsep}{3pt} 
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|*{24}{c}}
+     & w1 & w2 & w3 & w4 & w5 & w6 & w7 & w8 & w9 & w10 & w11 & w12 & w13 & w14 & w15 & w16 & w17 & w18 & w19 & w20 & w21 & w22 & w23 & w24 \\ \hline
+q6  & \textbf{+} & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - \\
+q12 & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & \textbf{+} & - & - & - & - & \textbf{+} \\
+q14 & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & \textbf{+} & - & - & - & - & \textbf{+} \\
+q11 & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & \textbf{+} & - & - \\
+q0  & - & - & - & - & \textbf{+} & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - \\
+q5  & - & - & - & - & - & \textbf{+} & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - \\
+q13 & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & \textbf{+} & - & \textbf{+} & \textbf{+} & - \\
+q1  & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - \\
+q2  & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - \\
+q3  & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - & - & - \\
+q7  & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - & - \\
+q9  & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & \textbf{+} & - & - & - & \textbf{+} & - & - & - \\
+q10 & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - \\
+q15 & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - \\
+q22 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & \textbf{+} & - & \textbf{+} & \textbf{+} & - \\
+q23 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & \textbf{+} & - & - & - & - & \textbf{+} \\
+q4  & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - \\
+q16 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - \\
+q20 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & \textbf{+} \\
+q21 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & \textbf{+} & - \\
+q8  & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - \\
+q17 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & \textbf{+} & - & - \\
+q19 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - \\
+q18 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} \\
+\end{tabular}
+\end{center}
+
+
+\section*{НКА}
+Поскольку матрица переходов практически имеет верхнетреугольный вид (картину нарушает лишь элемент на позиции 
+(q17,w18)), можно утверждать, что полученный минимальный ДКА одновременно является и минимальным НКА. Тем не менее, я дополнительно построю НКА, который будет использоваться для фазз-тестирования.
+
+\begin{center}
+    \includegraphics[width=0.85\textwidth]{NFA.png} 
+\end{center}
+
+В моем случае таблицу для НКА строить не нужно, так как подходит таблица для ДКА.
+\end{document}
+
