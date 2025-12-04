@@ -35,8 +35,6 @@
 \end{center}
 
 
-\section*{Таблица переходов}
-
 w1  = ababbababb
 
 w2  = bb
@@ -130,5 +128,103 @@ q18 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - 
 \end{center}
 
 В моем случае таблицу для НКА строить не нужно, так как подходит таблица для ДКА.
+
+\section*{ПКА}
+
+\textbf{Инварианты регулярного выражения:}
+\begin{enumerate}
+    \item Строка состоит только из символов $a$ и $b$
+    \item Строка содержит хотя бы одну из следующих подстрок: \texttt{baba}, \texttt{bab}, \texttt{aba}, \texttt{ab}, \texttt{ba}
+    \item Длина строки не менее 6 символов
+    \item Во всех альтернативах строки оканчиваются на $b$(во второй части на $ab$)
+\end{enumerate}
+
+Построю ПКА по 3 инварианту со строкой baba.
+
+\begin{center}
+\scriptsize
+\setlength{\tabcolsep}{3pt} 
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{l|*{24}{c}}
+     & w1 & w2 & w3 & w4 & w5 & w6 & w7 & w8 & w9 & w10 & w11 & w12 & w13 & w14 & w15 & w16 & w17 & w18 & w19 & w20 & w21 & w22 & w23 & w24 \\ \hline
+q6  & \textbf{+} & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - \\
+q12 & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & \textbf{+} & - & - & - & - & \textbf{+} \\
+q14 & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & \textbf{+} & - & - & - & - & \textbf{+} \\
+q11 & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & \textbf{+} & - & - \\
+q0  & - & - & - & - & \textbf{+} & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - \\
+q5  & - & - & - & - & - & \textbf{+} & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - \\
+q13 & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & \textbf{+} & - & \textbf{+} & \textbf{+} & - \\
+q1  & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - \\
+q2  & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - \\
+q3  & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - & - & - \\
+q7  & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - & - & - \\
+q9  & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & \textbf{+} & - & - & - & \textbf{+} & - & - & - \\
+q10 & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - & - \\
+q15 & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - & - & - & - \\
+q22 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & \textbf{+} & - & \textbf{+} & \textbf{+} & - \\
+q23 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & \textbf{+} & - & - & - & - & \textbf{+} \\
+q4  & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - & - \\
+q16 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & - & - \\
+q20 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & - & \textbf{+} \\
+q21 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & \textbf{+} & - \\
+q8  & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - \\
+q17 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - & - & - & \textbf{+} & - & - \\
+q19 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} & - \\
+q18 & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & - & \textbf{+} \\ \hline
+p0  & \textbf{+} & - & - & - & \textbf{+} & \textbf{+} & - & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & - & - & - & - & \textbf{+} & - & - & - & \textbf{+} & - & - & - \\
+p1  & \textbf{+} & - & - & - & \textbf{+} & \textbf{+} & - & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & - & - & - & - & \textbf{+} & - & - & - & \textbf{+} & - & - & \textbf{+} \\
+p2  & \textbf{+} & - & - & - & \textbf{+} & \textbf{+} & - & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & - & - & - & \textbf{+} & - & - & - & \textbf{+} & - & \textbf{+} & - \\
+p3  & \textbf{+} & - & - & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & - & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & - & \textbf{+} & - & \textbf{+} & \textbf{+} & - & \textbf{+} \\
+p4  & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} & \textbf{+} \\
+\end{tabular}
+\end{center}
+
+\begin{center}
+    \includegraphics[width=1.02\textwidth]{AFA.png} 
+\end{center}
+
+\section*{Расширенное регулярное выражение}
+
+\[
+\underbrace{\left( aa^{*}ab \;\middle|\; bbabb \;\middle|\; ab\,b^{*}abab \right)^{*}}_{\text{Блок 1}}
+\, 
+\underbrace{baba}_{\text{Блок 2}}
+\underbrace{(a \mid b)(a \mid b)}_{\text{Блок 3}}
+\underbrace{\left( (aa)^{*}ab \;\middle|\; bab\,b^{*}aabab \right)^{*}}_{\text{Блок 4}}
+\]
+
+\[
+\Downarrow
+\]
+
+\[
+\underbrace{^{\wedge}\left( aa^{+}b \;\middle|\; bbabb \;\middle|\; ab^{+}abab \right)^{*}}_{\text{Блок 1}}
+\, 
+\underbrace{baba}_{\text{Блок 2}}
+\underbrace{..}_{\text{Блок 3}}
+\underbrace{\left( ((aa)^{*} \;\middle|\; bab^{+}aab)ab \right)^{*}\$}_{\text{Блок 4}}
+\]
+
+
+\textbf{1. $aa^{*}ab \;\to\; aa^{+}b$.}  
+Перед $a^{*}$ уже стоит обязательная буква $a$, поэтому минимум один символ $a$ уже гарантирован.  
+Отсюда $a a^{*} = a^{+}$.
+
+\textbf{2. $ab\,b^{*}abab \;\to\; ab^{+}abab$.}  
+Аналогично, перед $b^{*}$ есть обязательный $b$, значит минимум один $b$ уже есть.  
+Поэтому $b b^{*} = b^{+}$.
+
+\textbf{3. $(a \mid b)(a \mid b) \;\to\; ..$.}  
+Каждый из вариантов $(a \mid b)$ означает «любой символ из алфавита $\{a,b\}$».  
+Две такие конструкции подряд дают два произвольных символа, поэтому заменяются на ``..''.
+
+
+\textbf{4. $bab\,b^{*}aabab \;\to\; bab^{+}aabab$.}  
+Опять используется $b b^{*} = b^{+}$, так как перед звёздочкой есть обязательный $b$.
+
+\textbf{5. }  
+Обе альтернативы $(aa)^{*}ab$ и $bab^{+}aabab$ заканчиваются на ab.  
+Поэтому общий хвост можно вынести: $Xab \mid Yab = (X \mid Y)ab$.
+
 \end{document}
 
